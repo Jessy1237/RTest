@@ -1,0 +1,6 @@
+#delay is in milliseconds, Reward is the amount of money the winner is payed, CharAmount is the amount of characters the player has to type and Currency is the Name of the Currency of your server.
+#Sat Oct 22 09:49:40 WST 2011
+charAmount=10
+Currency=Dollars
+delay=180000
+reward=500
