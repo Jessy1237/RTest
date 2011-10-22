@@ -1,0 +1,13 @@
+name: RTest
+main: com.Jessy1237.RTest.Main
+version: 1.2.1
+commands:
+   RTest:
+      description: Displays a Help Page and all the commands. Base for all RTest Commands.
+permissions:
+   RTest.Member:
+      description: Gives the general permissions to win a Reaction Test and to see some of the Basic Commands.
+      default: false
+   RTest.Admin:
+      description: Gives Full Access to All the RTest Commands.
+      default: false
