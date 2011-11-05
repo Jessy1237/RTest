@@ -1,6 +1,6 @@
 name: RTest
 main: com.Jessy1237.RTest.Main
-version: 1.2.1
+version: 1.2.3
 commands:
    RTest:
       description: Displays a Help Page and all the commands. Base for all RTest Commands.
