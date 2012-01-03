@@ -43,7 +43,7 @@ public class RTestPlayerListener extends PlayerListener{
 				}
 			}
 		}else{
-			if((event.getMessage()).equals((loadRnum.dNum1)) || EorD == 1){
+			if((event.getMessage()).equals((loadRnum.dNum1)) && EorD == 1){
 				player.sendMessage(ChatColor.GOLD + "You don't have permission to win a Reaction Test");
 				player.sendMessage(ChatColor.GOLD + "Congratulations Though for Getting it right!");
 			}else{

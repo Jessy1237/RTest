@@ -21,7 +21,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin{
 	
-	public static String vernum = "1.2.3";
+	public static String vernum = "1.3";
 	private Commands Exe;
 	static int b = 0;
 	private final RTestPlayerListener playerlistener = new RTestPlayerListener(this);
