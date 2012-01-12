@@ -1,6 +1,8 @@
-#delay is in milliseconds, Reward is the amount of money the winner is payed, CharAmount is the amount of characters the player has to type and Currency is the Name of the Currency of your server.
-#Sat Oct 22 09:49:40 WST 2011
+#delay is in milliseconds, Reward is the amount of money the winner is payed, CharAmount is the amount of characters the player has to type and Currency is the Name of the Currency of your server, CommandColor is the color of the response when you use an RTest Command, ChatColor is the color of the Reaction Tests in Chat.
+#Thu Jan 12 14:06:36 WST 2012
 charAmount=10
 Currency=Dollars
 delay=180000
-reward=500
+ChatColor=12
+CommandColor=7
+reward=500.0
