@@ -1,6 +1,7 @@
 name: RTest
-main: com.Jessy1237.RTest.Main
-version: 1.2.3
+main: com.Jessy1237.RTest.RTest
+version: 1.4
+depend: [Vault]
 commands:
    RTest:
       description: Displays a Help Page and all the commands. Base for all RTest Commands.
