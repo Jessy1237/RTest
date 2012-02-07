@@ -4,10 +4,10 @@ import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChatEvent;
-import org.bukkit.event.player.PlayerListener;
-
-public class RTestPlayerListener extends PlayerListener{
+public class RTestPlayerListener implements Listener{
 	
 	static String message = "";
 	static int EorD = 0;
@@ -28,11 +28,12 @@ public class RTestPlayerListener extends PlayerListener{
 		EorD = 0;
 	}
 
+	@EventHandler
 	public void onPlayerChat(PlayerChatEvent event){
 		perms = plugin.perms;
 		econ = RTest.econ;
 		Player player = event.getPlayer();
-		String name = player.getDisplayName();
+        String name = player.getName();
 		if(perms.playerHas(player, "RTest.Member") || perms.playerHas(player, "RTest.Admin")){
 			Player players[] = plugin.getServer().getOnlinePlayers();
 			if((event.getMessage()).equals((loadRnum.dNum1))  && EorD == 1){

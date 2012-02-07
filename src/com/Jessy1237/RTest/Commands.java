@@ -29,6 +29,7 @@ public class Commands implements CommandExecutor{
 	
 //Commands...Warning Many of them....!
 	
+	@SuppressWarnings("deprecation")
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		perms = plugin.perms;
 		if(label.equalsIgnoreCase("RTest")){

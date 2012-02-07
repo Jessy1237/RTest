@@ -1,6 +1,6 @@
 name: RTest
 main: com.Jessy1237.RTest.RTest
-version: 1.4
+version: 1.4.2
 depend: [Vault]
 commands:
    RTest:

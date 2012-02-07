@@ -16,23 +16,20 @@ import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 
 import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
 import org.bukkit.ChatColor;
-import org.bukkit.event.Event.Priority;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
-
+@SuppressWarnings("deprecation")
 public class RTest extends JavaPlugin {
 
 	public Permission perms = null;
 	public static Economy econ = null;
-	public static String vernum = "1.4";
+	public static String vernum = "1.4.2";
 	private Commands Exe;
 	static int b = 0;
-	private final RTestPlayerListener playerlistener = new RTestPlayerListener(
-			this);
+    private final RTestPlayerListener playerlistener = new RTestPlayerListener(this);
 	static Logger log = Logger.getLogger("Minecraft");
 	static String message = "";
 
@@ -63,43 +60,50 @@ public class RTest extends JavaPlugin {
 
 	static String CommandColor;
 
-	static String CommandColor(){
-		if (!conf.exists()) {
-			CommandColor = "&1";
-		} else {
-			try{
-				FileInputStream in = new FileInputStream(conf);
-				prop.load(in);
-				CommandColor = prop.getProperty("CommandColor");
-				in.close();
-			}catch(IOException e){
-				e.printStackTrace();
-			}
-		}
-		return CommandColor;
-	}
-	
-	public ChatColor getColour(String colour){
-		return ChatColor.getByCode(Integer.parseInt(colour));
-	}
-	
-	static String ChatColors;
+    static String CommandColor()
+    {
+        if(!conf.exists())
+            CommandColor = "7";
+        else
+            try
+            {
+                FileInputStream in = new FileInputStream(conf);
+                prop.load(in);
+                CommandColor = prop.getProperty("CommandColor");
+                in.close();
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
+        return CommandColor;
+    }
 
-	static String ChatColor(){
-		if (!conf.exists()) {
-			ChatColors = "&1";
-		} else {
-			try{
-				FileInputStream in = new FileInputStream(conf);
-				prop.load(in);
-				ChatColors = prop.getProperty("ChatColor");
-				in.close();
-			}catch(IOException e){
-				e.printStackTrace();
-			}
-		}
-		return ChatColors;
-	}
+    public ChatColor getColour(String colour)
+    {
+        return org.bukkit.ChatColor.getByCode(Integer.parseInt(colour));
+    }
+
+    static String ChatColors = "";
+    
+    static String ChatColor()
+    {
+        if(!conf.exists())
+            ChatColors = "12";
+        else
+            try
+            {
+                FileInputStream in = new FileInputStream(conf);
+                prop.load(in);
+                ChatColors = prop.getProperty("ChatColor");
+                in.close();
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
+        return ChatColors;
+    }
 
 	
 	static int charAmount;
@@ -260,9 +264,9 @@ public class RTest extends JavaPlugin {
 		return econ != null;
 	}
 	
-	public void Hooks() {
-		PluginManager pm = getServer().getPluginManager();
-		pm.registerEvent(Event.Type.PLAYER_CHAT, playerlistener,
-				Priority.Normal, this);
-	}
+    public void Hooks()
+    {
+        PluginManager pm = getServer().getPluginManager();
+        pm.registerEvent(org.bukkit.event.Event.Type.PLAYER_CHAT, playerlistener, org.bukkit.event.Event.Priority.Normal, this);
+    }
 }
